@@ -27,6 +27,7 @@
 		95194DC32BD5B98400546DBA /* MLMultiArray+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95194DBE2BD5B98400546DBA /* MLMultiArray+Utils.swift */; };
 		95194DC42BD5B98400546DBA /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95194DBF2BD5B98400546DBA /* Utils.swift */; };
 		95194DC62BD5B99200546DBA /* vocab.txt in Resources */ = {isa = PBXBuildFile; fileRef = 95194DC52BD5B99200546DBA /* vocab.txt */; };
+		95194DC92BD5C2FD00546DBA /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 95194DC82BD5C2FD00546DBA /* Zip */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95194DC92BD5C2FD00546DBA /* Zip in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +143,9 @@
 			dependencies = (
 			);
 			name = VisionLLM;
+			packageProductDependencies = (
+				95194DC82BD5C2FD00546DBA /* Zip */,
+			);
 			productName = VisionLLM;
 			productReference = 95194D5D2BD38ACD00546DBA /* VisionLLM.app */;
 			productType = "com.apple.product-type.application";
@@ -169,6 +174,9 @@
 				Base,
 			);
 			mainGroup = 95194D542BD38ACD00546DBA;
+			packageReferences = (
+				95194DC72BD5C2FD00546DBA /* XCRemoteSwiftPackageReference "Zip" */,
+			);
 			productRefGroup = 95194D5E2BD38ACD00546DBA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -422,6 +430,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		95194DC72BD5C2FD00546DBA /* XCRemoteSwiftPackageReference "Zip" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/Zip.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		95194DC82BD5C2FD00546DBA /* Zip */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 95194DC72BD5C2FD00546DBA /* XCRemoteSwiftPackageReference "Zip" */;
+			productName = Zip;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 95194D552BD38ACD00546DBA /* Project object */;
 }

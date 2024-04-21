@@ -1,4 +1,5 @@
 import SwiftUI
+import Zip
 import Vision
 import AVFoundation
 
@@ -14,6 +15,44 @@ class ViewModel: ObservableObject {
     @Published var images: [UIImage] = []
     @Published var imagePredictions: [ImagePrediction] = []
     @Published var llmOutputs: [String] = [] // Store LLM outputs for each image
+    
+    func exportData(completion: @escaping (Result<URL, Error>) -> Void) {
+        let fileManager = FileManager.default
+        let documentsDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let csvFileURL = documentsDirectory.appendingPathComponent("image_data.csv")
+        var csvText = "ImageID,ObjectDetected,LLMOutput,TruthLabel\n"
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyyMMddHHmmssSSS"
+        var filesToZip: [URL] = []
+        
+        for (index, prediction) in imagePredictions.enumerated() {
+            let timestamp = formatter.string(from: Date())
+            let imageId = "Image_\(timestamp)_\(index)"
+            let objectsDetected = prediction.predictions.map { $0.labels.first?.identifier ?? "Unknown" }.joined(separator: "; ")
+            let llmOutput = llmOutputs[index]
+            let truthLabel = prediction.truthLabel ?? "N/A"
+            
+            csvText.append("\(imageId),\"\(objectsDetected)\",\"\(llmOutput)\",\"\(truthLabel)\"\n")
+            
+            if let imageData = prediction.image.jpegData(compressionQuality: 0.8) {
+                let imagePath = documentsDirectory.appendingPathComponent("\(imageId).jpg")
+                try? imageData.write(to: imagePath)
+                filesToZip.append(imagePath)
+            }
+        }
+        
+        do {
+            try csvText.write(to: csvFileURL, atomically: true, encoding: .utf8)
+            filesToZip.append(csvFileURL) // Add the CSV file to the list of files to zip
+            
+            let zipFilePath = documentsDirectory.appendingPathComponent("ExportedData.zip")
+            try Zip.zipFiles(paths: filesToZip, zipFilePath: zipFilePath, password: nil, progress: nil)
+            completion(.success(zipFilePath))
+        } catch {
+            completion(.failure(error))
+        }
+    }
     
     func addImage(_ image: UIImage) {
         images.append(image)
@@ -60,6 +99,9 @@ struct ContentView: View {
     @State private var isMotionDetectionActive = false
     @State private var isCameraAuthorized = false
     @State private var showingGallery = false
+    @State private var isExporting = false
+    @State private var documentPickerPresented = false
+    @State private var fileToSave: URL?
     
     private let motionManager = MotionManager()
     private let cameraController = CameraController()
@@ -91,6 +133,24 @@ struct ContentView: View {
                 .sheet(isPresented: $showingGallery) {
                     // Pass the entire ViewModel to maintain state across components.
                     GalleryView(viewModel: viewModel, llmOutputs: viewModel.llmOutputs)
+                }
+                
+                Button("Export Data") {
+                    viewModel.exportData { result in
+                        DispatchQueue.main.async {
+                            switch result {
+                            case .success(let url):
+                                self.fileToSave = url
+                                self.documentPickerPresented = true
+                            case .failure(let error):
+                                print("Export failed: \(error.localizedDescription)")
+                            }
+                        }
+                    }
+                }
+                .disabled(isMotionDetectionActive || viewModel.images.isEmpty)
+                .sheet(isPresented: $documentPickerPresented) {
+                    DocumentPicker(url: $fileToSave)
                 }
             }
             .navigationBarTitle("Vision LLM", displayMode: .inline)
@@ -138,6 +198,43 @@ struct ContentView: View {
             isCameraAuthorized = false
         default:
             isCameraAuthorized = false
+        }
+    }
+}
+
+struct DocumentPicker: UIViewControllerRepresentable {
+    @Binding var url: URL?
+    @Environment(\.presentationMode) var presentationMode
+    
+    func makeUIViewController(context: Context) -> UIDocumentPickerViewController {
+        let picker = UIDocumentPickerViewController(forExporting: [url!], asCopy: true) // asCopy depends on whether you want to move or copy the file
+        picker.delegate = context.coordinator
+        return picker
+    }
+    
+    func updateUIViewController(_ uiViewController: UIDocumentPickerViewController, context: Context) {
+        // Typically you don't need to implement this method for a document picker.
+    }
+    
+    func makeCoordinator() -> Coordinator {
+        Coordinator(self)
+    }
+    
+    class Coordinator: NSObject, UIDocumentPickerDelegate {
+        var parent: DocumentPicker
+        
+        init(_ parent: DocumentPicker) {
+            self.parent = parent
+        }
+        
+        func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+            // This is where you handle the user having selected a file location.
+            parent.presentationMode.wrappedValue.dismiss()
+        }
+        
+        func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
+            // Handle the user canceling the document picker
+            parent.presentationMode.wrappedValue.dismiss()
         }
     }
 }
