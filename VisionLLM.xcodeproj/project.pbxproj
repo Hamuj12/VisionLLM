@@ -11,6 +11,22 @@
 		95194D632BD38ACD00546DBA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95194D622BD38ACD00546DBA /* ContentView.swift */; };
 		95194D652BD38ACE00546DBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95194D642BD38ACE00546DBA /* Assets.xcassets */; };
 		95194D682BD38ACE00546DBA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95194D672BD38ACE00546DBA /* Preview Assets.xcassets */; };
+		95194D712BD38BE500546DBA /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95194D702BD38BE500546DBA /* ImagePicker.swift */; };
+		95194D782BD397A400546DBA /* ModelInference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95194D772BD397A400546DBA /* ModelInference.swift */; };
+		95194D7E2BD4655200546DBA /* float32_model.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 95194D7D2BD4655200546DBA /* float32_model.mlpackage */; };
+		95194D842BD4DA5700546DBA /* yolov8s.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 95194D832BD4DA5700546DBA /* yolov8s.mlpackage */; };
+		95194D862BD4E7CA00546DBA /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95194D852BD4E7CA00546DBA /* MotionManager.swift */; };
+		95194D882BD4E7F600546DBA /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95194D872BD4E7F600546DBA /* CameraController.swift */; };
+		95194D8A2BD4E8FD00546DBA /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95194D892BD4E8FD00546DBA /* GalleryView.swift */; };
+		95194D8C2BD4E92300546DBA /* ImagePrediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95194D8B2BD4E92300546DBA /* ImagePrediction.swift */; };
+		95194D8E2BD4E94500546DBA /* ImageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95194D8D2BD4E94500546DBA /* ImageDetailView.swift */; };
+		95194D902BD4EA5400546DBA /* PredictionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95194D8F2BD4EA5400546DBA /* PredictionView.swift */; };
+		95194DC02BD5B98400546DBA /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95194DBB2BD5B98400546DBA /* Math.swift */; };
+		95194DC12BD5B98400546DBA /* BertTokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95194DBC2BD5B98400546DBA /* BertTokenizer.swift */; };
+		95194DC22BD5B98400546DBA /* ModelHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95194DBD2BD5B98400546DBA /* ModelHandler.swift */; };
+		95194DC32BD5B98400546DBA /* MLMultiArray+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95194DBE2BD5B98400546DBA /* MLMultiArray+Utils.swift */; };
+		95194DC42BD5B98400546DBA /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95194DBF2BD5B98400546DBA /* Utils.swift */; };
+		95194DC62BD5B99200546DBA /* vocab.txt in Resources */ = {isa = PBXBuildFile; fileRef = 95194DC52BD5B99200546DBA /* vocab.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +35,23 @@
 		95194D622BD38ACD00546DBA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		95194D642BD38ACE00546DBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95194D672BD38ACE00546DBA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		95194D702BD38BE500546DBA /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		95194D722BD38C9900546DBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		95194D772BD397A400546DBA /* ModelInference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelInference.swift; sourceTree = "<group>"; };
+		95194D7D2BD4655200546DBA /* float32_model.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = float32_model.mlpackage; sourceTree = "<group>"; };
+		95194D832BD4DA5700546DBA /* yolov8s.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = yolov8s.mlpackage; sourceTree = "<group>"; };
+		95194D852BD4E7CA00546DBA /* MotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
+		95194D872BD4E7F600546DBA /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
+		95194D892BD4E8FD00546DBA /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
+		95194D8B2BD4E92300546DBA /* ImagePrediction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePrediction.swift; sourceTree = "<group>"; };
+		95194D8D2BD4E94500546DBA /* ImageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailView.swift; sourceTree = "<group>"; };
+		95194D8F2BD4EA5400546DBA /* PredictionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionView.swift; sourceTree = "<group>"; };
+		95194DBB2BD5B98400546DBA /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
+		95194DBC2BD5B98400546DBA /* BertTokenizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BertTokenizer.swift; sourceTree = "<group>"; };
+		95194DBD2BD5B98400546DBA /* ModelHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelHandler.swift; sourceTree = "<group>"; };
+		95194DBE2BD5B98400546DBA /* MLMultiArray+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MLMultiArray+Utils.swift"; sourceTree = "<group>"; };
+		95194DBF2BD5B98400546DBA /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		95194DC52BD5B99200546DBA /* vocab.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = vocab.txt; path = VisionLLM/vocab.txt; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +84,27 @@
 		95194D5F2BD38ACD00546DBA /* VisionLLM */ = {
 			isa = PBXGroup;
 			children = (
+				95194D832BD4DA5700546DBA /* yolov8s.mlpackage */,
+				95194D7D2BD4655200546DBA /* float32_model.mlpackage */,
+				95194D722BD38C9900546DBA /* Info.plist */,
+				95194DBA2BD5B94E00546DBA /* Resources */,
 				95194D602BD38ACD00546DBA /* VisionLLMApp.swift */,
+				95194DBC2BD5B98400546DBA /* BertTokenizer.swift */,
+				95194DBB2BD5B98400546DBA /* Math.swift */,
+				95194DBE2BD5B98400546DBA /* MLMultiArray+Utils.swift */,
+				95194DBD2BD5B98400546DBA /* ModelHandler.swift */,
+				95194DBF2BD5B98400546DBA /* Utils.swift */,
+				95194D702BD38BE500546DBA /* ImagePicker.swift */,
+				95194D892BD4E8FD00546DBA /* GalleryView.swift */,
+				95194D8D2BD4E94500546DBA /* ImageDetailView.swift */,
+				95194D8B2BD4E92300546DBA /* ImagePrediction.swift */,
+				95194D8F2BD4EA5400546DBA /* PredictionView.swift */,
+				95194D852BD4E7CA00546DBA /* MotionManager.swift */,
+				95194D872BD4E7F600546DBA /* CameraController.swift */,
 				95194D622BD38ACD00546DBA /* ContentView.swift */,
 				95194D642BD38ACE00546DBA /* Assets.xcassets */,
 				95194D662BD38ACE00546DBA /* Preview Content */,
+				95194D772BD397A400546DBA /* ModelInference.swift */,
 			);
 			path = VisionLLM;
 			sourceTree = "<group>";
@@ -65,6 +115,14 @@
 				95194D672BD38ACE00546DBA /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		95194DBA2BD5B94E00546DBA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				95194DC52BD5B99200546DBA /* vocab.txt */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +183,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95194DC62BD5B99200546DBA /* vocab.txt in Resources */,
 				95194D682BD38ACE00546DBA /* Preview Assets.xcassets in Resources */,
 				95194D652BD38ACE00546DBA /* Assets.xcassets in Resources */,
 			);
@@ -137,7 +196,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95194D842BD4DA5700546DBA /* yolov8s.mlpackage in Sources */,
+				95194DC02BD5B98400546DBA /* Math.swift in Sources */,
+				95194DC32BD5B98400546DBA /* MLMultiArray+Utils.swift in Sources */,
+				95194D862BD4E7CA00546DBA /* MotionManager.swift in Sources */,
+				95194D712BD38BE500546DBA /* ImagePicker.swift in Sources */,
+				95194D902BD4EA5400546DBA /* PredictionView.swift in Sources */,
+				95194D8E2BD4E94500546DBA /* ImageDetailView.swift in Sources */,
+				95194DC22BD5B98400546DBA /* ModelHandler.swift in Sources */,
 				95194D632BD38ACD00546DBA /* ContentView.swift in Sources */,
+				95194DC42BD5B98400546DBA /* Utils.swift in Sources */,
+				95194D782BD397A400546DBA /* ModelInference.swift in Sources */,
+				95194DC12BD5B98400546DBA /* BertTokenizer.swift in Sources */,
+				95194D7E2BD4655200546DBA /* float32_model.mlpackage in Sources */,
+				95194D8C2BD4E92300546DBA /* ImagePrediction.swift in Sources */,
+				95194D882BD4E7F600546DBA /* CameraController.swift in Sources */,
+				95194D8A2BD4E8FD00546DBA /* GalleryView.swift in Sources */,
 				95194D612BD38ACD00546DBA /* VisionLLMApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,6 +349,7 @@
 				DEVELOPMENT_TEAM = SAPPKJ98U9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = VisionLLM/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -285,6 +360,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lidar.VisionLLM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -304,6 +380,7 @@
 				DEVELOPMENT_TEAM = SAPPKJ98U9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = VisionLLM/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -314,6 +391,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lidar.VisionLLM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
